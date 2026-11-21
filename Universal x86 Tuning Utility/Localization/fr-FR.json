@@ -620,5 +620,13 @@
   "Start-up tuning delayed": "Réglage au démarrage retardé",
   "Hold Shift within 10 seconds to skip saved Curve Optimiser and Intel undervolt settings for this session.": "Maintenez la touche Maj enfoncée dans les 10 secondes pour ignorer, pendant cette session, les réglages enregistrés de l’optimiseur de courbe et de sous-tension Intel.",
   "Automatic tuning skipped": "Réglage automatique ignoré",
-  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "Les réglages enregistrés de l’optimiseur de courbe et de sous-tension Intel ne seront pas appliqués automatiquement pendant cette session."
+  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "Les réglages enregistrés de l’optimiseur de courbe et de sous-tension Intel ne seront pas appliqués automatiquement pendant cette session.",
+  "Preset on Workstation Lock": "Profil au verrouillage du poste de travail",
+  "Apply a preset when Windows locks the current session.": "Appliquer un profil lorsque Windows verrouille la session en cours.",
+  "Preset on Workstation Unlock": "Profil au déverrouillage du poste de travail",
+  "Apply a preset when the current Windows session is unlocked.": "Appliquer un profil lorsque la session Windows en cours est déverrouillée.",
+  "Lock Preset Applied!": "Profil de verrouillage appliqué !",
+  "Unlock Preset Applied!": "Profil de déverrouillage appliqué !",
+  "Your workstation lock preset has been applied.": "Le profil de verrouillage du poste de travail a été appliqué.",
+  "Your workstation unlock preset has been applied.": "Le profil de déverrouillage du poste de travail a été appliqué."
 }
