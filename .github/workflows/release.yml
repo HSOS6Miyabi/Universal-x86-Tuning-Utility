@@ -30,18 +30,32 @@ jobs:
           $root = 'Universal x86 Tuning Utility'
           $xaml = [xml](Get-Content "$root/Views/Pages/Automations.xaml" -Raw)
           $settings = [xml](Get-Content "$root/Properties/Settings.settings" -Raw)
-          $zh = Get-Content "$root/Localization/zh-CN.json" -Raw | ConvertFrom-Json -AsHashtable
-          $en = Get-Content "$root/Localization/en-GB.json" -Raw | ConvertFrom-Json -AsHashtable
           foreach ($name in @('lockPreset', 'unlockPreset', 'lockCommandString', 'unlockCommandString')) {
             if (-not ($settings.SettingsFile.Settings.Setting | Where-Object { $_.Name -eq $name })) {
               throw "Missing automation setting: $name"
             }
           }
-          foreach ($key in @('Preset on Workstation Lock', 'Preset on Workstation Unlock',
-                            'Apply a preset when Windows locks the current session.',
-                            'Apply a preset when the current Windows session is unlocked.')) {
-            if (-not $zh.ContainsKey($key) -or -not $en.ContainsKey($key)) {
-              throw "Missing automation translation: $key"
+          $requiredTranslations = @(
+            'Preset on Workstation Lock',
+            'Apply a preset when Windows locks the current session.',
+            'Preset on Workstation Unlock',
+            'Apply a preset when the current Windows session is unlocked.',
+            'Lock Preset Applied!',
+            'Unlock Preset Applied!',
+            'Your workstation lock preset has been applied.',
+            'Your workstation unlock preset has been applied.'
+          )
+          $catalogues = @(Get-ChildItem -Path "$root/Localization" -Filter '*.json')
+          if ($catalogues.Count -ne 21) { throw "Expected 21 supported languages, got $($catalogues.Count)" }
+          foreach ($file in $catalogues) {
+            $catalogue = Get-Content $file.FullName -Raw | ConvertFrom-Json -AsHashtable
+            foreach ($key in $requiredTranslations) {
+              if (-not $catalogue.ContainsKey($key) -or [string]::IsNullOrWhiteSpace([string]$catalogue[$key])) {
+                throw "Missing automation translation in $($file.Name): $key"
+              }
+              if ($file.BaseName -ne 'en-GB' -and [string]$catalogue[$key] -ceq $key) {
+                throw "Untranslated automation text in $($file.Name): $key"
+              }
             }
           }
           $runtime = Get-Content "$root/Services/ApplicationRuntimeService.cs" -Raw
