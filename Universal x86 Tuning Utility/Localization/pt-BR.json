@@ -620,5 +620,13 @@
   "Start-up tuning delayed": "Ajuste na inicialização adiado",
   "Hold Shift within 10 seconds to skip saved Curve Optimiser and Intel undervolt settings for this session.": "Mantenha Shift pressionado em até 10 segundos para ignorar nesta sessão as configurações salvas do Otimizador de Curva e de undervolt da Intel.",
   "Automatic tuning skipped": "Ajuste automático ignorado",
-  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "As configurações salvas do Otimizador de Curva e de undervolt da Intel não serão aplicadas automaticamente durante esta sessão."
+  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "As configurações salvas do Otimizador de Curva e de undervolt da Intel não serão aplicadas automaticamente durante esta sessão.",
+  "Preset on Workstation Lock": "Predefinição ao bloquear a estação de trabalho",
+  "Apply a preset when Windows locks the current session.": "Aplicar uma predefinição quando o Windows bloquear a sessão atual.",
+  "Preset on Workstation Unlock": "Predefinição ao desbloquear a estação de trabalho",
+  "Apply a preset when the current Windows session is unlocked.": "Aplicar uma predefinição quando a sessão atual do Windows for desbloqueada.",
+  "Lock Preset Applied!": "Predefinição de bloqueio aplicada!",
+  "Unlock Preset Applied!": "Predefinição de desbloqueio aplicada!",
+  "Your workstation lock preset has been applied.": "A predefinição para bloquear a estação de trabalho foi aplicada.",
+  "Your workstation unlock preset has been applied.": "A predefinição para desbloquear a estação de trabalho foi aplicada."
 }
