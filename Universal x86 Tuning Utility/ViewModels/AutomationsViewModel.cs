@@ -21,6 +21,8 @@ public partial class AutomationsViewModel : PageViewModel
     [ObservableProperty] private string _selectedAcPreset = "None";
     [ObservableProperty] private string _selectedDcPreset = "None";
     [ObservableProperty] private string _selectedResumePreset = "None";
+    [ObservableProperty] private string _selectedLockPreset = "None";
+    [ObservableProperty] private string _selectedUnlockPreset = "None";
 
     public AutomationsViewModel(IPresetCatalogService presets, IAutomationSettings settings)
     {
@@ -42,6 +44,8 @@ public partial class AutomationsViewModel : PageViewModel
             SelectedAcPreset = Presets.Contains(_settings.acPreset) ? _settings.acPreset : "None";
             SelectedDcPreset = Presets.Contains(_settings.dcPreset) ? _settings.dcPreset : "None";
             SelectedResumePreset = Presets.Contains(_settings.resumePreset) ? _settings.resumePreset : "None";
+            SelectedLockPreset = Presets.Contains(_settings.lockPreset) ? _settings.lockPreset : "None";
+            SelectedUnlockPreset = Presets.Contains(_settings.unlockPreset) ? _settings.unlockPreset : "None";
         }
         finally { _loading = false; }
         SaveSelections();
@@ -50,6 +54,8 @@ public partial class AutomationsViewModel : PageViewModel
     partial void OnSelectedAcPresetChanged(string value) => SaveSelections();
     partial void OnSelectedDcPresetChanged(string value) => SaveSelections();
     partial void OnSelectedResumePresetChanged(string value) => SaveSelections();
+    partial void OnSelectedLockPresetChanged(string value) => SaveSelections();
+    partial void OnSelectedUnlockPresetChanged(string value) => SaveSelections();
 
     private void SaveSelections()
     {
@@ -60,6 +66,10 @@ public partial class AutomationsViewModel : PageViewModel
         _settings.dcCommandString = _presets.GetCommands(SelectedDcPreset);
         _settings.resumePreset = SelectedResumePreset;
         _settings.resumeCommandString = _presets.GetCommands(SelectedResumePreset);
+        _settings.lockPreset = SelectedLockPreset;
+        _settings.lockCommandString = _presets.GetCommands(SelectedLockPreset);
+        _settings.unlockPreset = SelectedUnlockPreset;
+        _settings.unlockCommandString = _presets.GetCommands(SelectedUnlockPreset);
         _settings.Save();
     }
 }
