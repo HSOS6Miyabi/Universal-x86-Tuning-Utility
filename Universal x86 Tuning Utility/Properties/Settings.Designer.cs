@@ -169,6 +169,54 @@ namespace Universal_x86_Tuning_Utility.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public string lockPreset {
+            get {
+                return ((string)(this["lockPreset"]));
+            }
+            set {
+                this["lockPreset"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public string unlockPreset {
+            get {
+                return ((string)(this["unlockPreset"]));
+            }
+            set {
+                this["unlockPreset"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string lockCommandString {
+            get {
+                return ((string)(this["lockCommandString"]));
+            }
+            set {
+                this["lockCommandString"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string unlockCommandString {
+            get {
+                return ((string)(this["unlockCommandString"]));
+            }
+            set {
+                this["unlockCommandString"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool ApplyOnStart {
             get {
