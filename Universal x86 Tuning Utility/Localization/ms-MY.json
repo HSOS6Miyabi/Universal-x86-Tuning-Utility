@@ -620,5 +620,13 @@
   "Start-up tuning delayed": "Penalaan permulaan ditangguhkan",
   "Hold Shift within 10 seconds to skip saved Curve Optimiser and Intel undervolt settings for this session.": "Tekan dan tahan Shift dalam masa 10 saat untuk melangkau tetapan Pengoptimum Lengkung dan voltan rendah Intel yang disimpan bagi sesi ini.",
   "Automatic tuning skipped": "Penalaan automatik dilangkau",
-  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "Tetapan Pengoptimum Lengkung dan voltan rendah Intel yang disimpan tidak akan digunakan secara automatik sepanjang sesi ini."
+  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "Tetapan Pengoptimum Lengkung dan voltan rendah Intel yang disimpan tidak akan digunakan secara automatik sepanjang sesi ini.",
+  "Preset on Workstation Lock": "Pratetap apabila stesen kerja dikunci",
+  "Apply a preset when Windows locks the current session.": "Gunakan pratetap apabila Windows mengunci sesi semasa.",
+  "Preset on Workstation Unlock": "Pratetap apabila stesen kerja dinyahkunci",
+  "Apply a preset when the current Windows session is unlocked.": "Gunakan pratetap apabila sesi Windows semasa dinyahkunci.",
+  "Lock Preset Applied!": "Pratetap kunci telah digunakan!",
+  "Unlock Preset Applied!": "Pratetap nyahkunci telah digunakan!",
+  "Your workstation lock preset has been applied.": "Pratetap untuk mengunci stesen kerja telah digunakan.",
+  "Your workstation unlock preset has been applied.": "Pratetap untuk menyahkunci stesen kerja telah digunakan."
 }
