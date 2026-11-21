@@ -22,11 +22,15 @@ public sealed class ApplicationRuntimeService : IDisposable
     private readonly DispatcherTimer autoReapply = new();
     private readonly DispatcherTimer _restore = new();
     private readonly List<Task> _pending = new();
+    private readonly IPresetCatalogService _presetCatalog;
+    private readonly SemaphoreSlim _sessionPresetGate = new(1, 1);
+    private Task _startupApplyTask = Task.CompletedTask;
     private bool _started, _stopping, _reapplying;
     private bool _startupApplyPending = true;
     private bool _automaticTuningSuppressed;
-    public ApplicationRuntimeService()
+    public ApplicationRuntimeService(IPresetCatalogService presetCatalog)
     {
+        _presetCatalog = presetCatalog;
         _misc.Interval = _restore.Interval = TimeSpan.FromSeconds(1);
         _misc.Tick += (_, _) => Track(RunMiscAsync());
         autoReapply.Tick += (_, _) => Track(RunReapplyAsync());
@@ -39,7 +43,9 @@ public sealed class ApplicationRuntimeService : IDisposable
         autoReapply.Interval = TimeSpan.FromSeconds(Math.Max(1, Settings.Default.AutoReapplyTime));
         _misc.Start(); autoReapply.Start(); _restore.Start();
         SystemEvents.PowerModeChanged += PowerModeChanged;
+        SystemEvents.SessionSwitch += SessionSwitch;
         var startup = ApplyOnStartAsync();
+        _startupApplyTask = startup;
         Track(startup);
         return startup;
     }
@@ -62,6 +68,64 @@ public sealed class ApplicationRuntimeService : IDisposable
         if (_stopping || _dispatcher.HasShutdownStarted) return;
         _dispatcher.BeginInvoke(new Action(() => { if (!_stopping) Track(ApplyPowerModeAsync(args)); }));
     }
+    private void SessionSwitch(object? sender, SessionSwitchEventArgs args)
+    {
+        if (_stopping || _dispatcher.HasShutdownStarted || _dispatcher.HasShutdownFinished) return;
+        if (args.Reason is not (SessionSwitchReason.SessionLock or SessionSwitchReason.SessionUnlock)) return;
+
+        var reason = args.Reason;
+        _dispatcher.BeginInvoke(new Action(() =>
+        {
+            if (!_stopping) Track(ApplySessionSwitchAsync(reason));
+        }));
+    }
+
+    private async Task ApplySessionSwitchAsync(SessionSwitchReason reason)
+    {
+        try
+        {
+            await _startupApplyTask;
+            await _sessionPresetGate.WaitAsync();
+            try
+            {
+                if (_stopping || _automaticTuningSuppressed || Settings.Default.isAdaptiveModeRunning)
+                    return;
+
+                bool isLock = reason == SessionSwitchReason.SessionLock;
+                string presetName = isLock ? Settings.Default.lockPreset : Settings.Default.unlockPreset;
+                if (string.IsNullOrWhiteSpace(presetName) ||
+                    string.Equals(presetName, "None", StringComparison.OrdinalIgnoreCase))
+                    return;
+
+                string commands = _presetCatalog.GetCommands(presetName);
+                if (string.IsNullOrWhiteSpace(commands))
+                    return;
+
+                Settings.Default.CommandString = commands;
+                if (isLock)
+                    Settings.Default.lockCommandString = commands;
+                else
+                    Settings.Default.unlockCommandString = commands;
+                Settings.Default.Save();
+
+                await TranslatePresetAsync(commands, presetName);
+                ToastNotification.ShowToastNotification(
+                    LocalizationService.Get(isLock ? "Lock Preset Applied!" : "Unlock Preset Applied!"),
+                    LocalizationService.Get(isLock
+                        ? "Your workstation lock preset has been applied."
+                        : "Your workstation unlock preset has been applied."));
+            }
+            finally
+            {
+                _sessionPresetGate.Release();
+            }
+        }
+        catch (Exception ex)
+        {
+            DiagnosticLogger.LogError(ex, "Failed during Windows session lock or unlock handling");
+        }
+    }
+
     public async Task StopAsync()
     {
         Dispose();
@@ -77,6 +141,7 @@ public sealed class ApplicationRuntimeService : IDisposable
         _stopping = true;
         _misc.Stop(); autoReapply.Stop(); _restore.Stop();
         SystemEvents.PowerModeChanged -= PowerModeChanged;
+        SystemEvents.SessionSwitch -= SessionSwitch;
     }
         private async Task ApplyOnStartAsync()
         {
