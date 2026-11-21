@@ -620,5 +620,13 @@
   "Start-up tuning delayed": "Настройка при запуске отложена",
   "Hold Shift within 10 seconds to skip saved Curve Optimiser and Intel undervolt settings for this session.": "Удерживайте Shift в течение 10 секунд, чтобы пропустить сохранённые настройки оптимизатора кривой и понижения напряжения Intel в этом сеансе.",
   "Automatic tuning skipped": "Автоматическая настройка пропущена",
-  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "Сохранённые настройки оптимизатора кривой и понижения напряжения Intel не будут применяться автоматически в течение этого сеанса."
+  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "Сохранённые настройки оптимизатора кривой и понижения напряжения Intel не будут применяться автоматически в течение этого сеанса.",
+  "Preset on Workstation Lock": "Профиль при блокировке рабочей станции",
+  "Apply a preset when Windows locks the current session.": "Применять профиль при блокировке текущего сеанса Windows.",
+  "Preset on Workstation Unlock": "Профиль при разблокировке рабочей станции",
+  "Apply a preset when the current Windows session is unlocked.": "Применять профиль при разблокировке текущего сеанса Windows.",
+  "Lock Preset Applied!": "Профиль блокировки применён!",
+  "Unlock Preset Applied!": "Профиль разблокировки применён!",
+  "Your workstation lock preset has been applied.": "Профиль для блокировки рабочей станции применён.",
+  "Your workstation unlock preset has been applied.": "Профиль для разблокировки рабочей станции применён."
 }
