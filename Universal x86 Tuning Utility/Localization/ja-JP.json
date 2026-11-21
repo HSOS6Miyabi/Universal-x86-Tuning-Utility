@@ -620,5 +620,13 @@
   "Start-up tuning delayed": "起動時のチューニングを遅延しています",
   "Hold Shift within 10 seconds to skip saved Curve Optimiser and Intel undervolt settings for this session.": "10 秒以内に Shift キーを押し続けると、このセッションでは保存済みのカーブオプティマイザーと Intel 低電圧化設定をスキップします。",
   "Automatic tuning skipped": "自動チューニングをスキップしました",
-  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "このセッション中、保存済みのカーブオプティマイザーと Intel 低電圧化設定は自動的に適用されません。"
+  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "このセッション中、保存済みのカーブオプティマイザーと Intel 低電圧化設定は自動的に適用されません。",
+  "Preset on Workstation Lock": "ワークステーションのロック時に適用するプリセット",
+  "Apply a preset when Windows locks the current session.": "Windows の現在のセッションがロックされたときにプリセットを適用します。",
+  "Preset on Workstation Unlock": "ワークステーションのロック解除時に適用するプリセット",
+  "Apply a preset when the current Windows session is unlocked.": "現在の Windows セッションのロックが解除されたときにプリセットを適用します。",
+  "Lock Preset Applied!": "ロック時のプリセットを適用しました",
+  "Unlock Preset Applied!": "ロック解除時のプリセットを適用しました",
+  "Your workstation lock preset has been applied.": "ワークステーションのロック時に指定したプリセットを適用しました。",
+  "Your workstation unlock preset has been applied.": "ワークステーションのロック解除時に指定したプリセットを適用しました。"
 }
