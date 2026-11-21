@@ -620,5 +620,13 @@
   "Start-up tuning delayed": "स्टार्ट-अप ट्यूनिंग में देरी की गई",
   "Hold Shift within 10 seconds to skip saved Curve Optimiser and Intel undervolt settings for this session.": "इस सत्र के लिए सहेजी गई कर्व ऑप्टिमाइज़र और Intel अंडरवोल्ट सेटिंग छोड़ने हेतु 10 सेकंड के भीतर Shift दबाए रखें।",
   "Automatic tuning skipped": "स्वचालित ट्यूनिंग छोड़ी गई",
-  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "इस सत्र के दौरान सहेजी गई कर्व ऑप्टिमाइज़र और Intel अंडरवोल्ट सेटिंग स्वचालित रूप से लागू नहीं होंगी।"
+  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "इस सत्र के दौरान सहेजी गई कर्व ऑप्टिमाइज़र और Intel अंडरवोल्ट सेटिंग स्वचालित रूप से लागू नहीं होंगी।",
+  "Preset on Workstation Lock": "वर्कस्टेशन लॉक होने पर लागू होने वाला प्रीसेट",
+  "Apply a preset when Windows locks the current session.": "Windows द्वारा वर्तमान सत्र लॉक किए जाने पर प्रीसेट लागू करें।",
+  "Preset on Workstation Unlock": "वर्कस्टेशन अनलॉक होने पर लागू होने वाला प्रीसेट",
+  "Apply a preset when the current Windows session is unlocked.": "वर्तमान Windows सत्र अनलॉक होने पर प्रीसेट लागू करें।",
+  "Lock Preset Applied!": "लॉक प्रीसेट लागू हो गया!",
+  "Unlock Preset Applied!": "अनलॉक प्रीसेट लागू हो गया!",
+  "Your workstation lock preset has been applied.": "वर्कस्टेशन लॉक होने के लिए चुना गया प्रीसेट लागू कर दिया गया है।",
+  "Your workstation unlock preset has been applied.": "वर्कस्टेशन अनलॉक होने के लिए चुना गया प्रीसेट लागू कर दिया गया है।"
 }
