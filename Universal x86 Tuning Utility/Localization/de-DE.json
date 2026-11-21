@@ -620,5 +620,13 @@
   "Start-up tuning delayed": "Start-Tuning verzögert",
   "Hold Shift within 10 seconds to skip saved Curve Optimiser and Intel undervolt settings for this session.": "Halten Sie innerhalb von 10 Sekunden die Umschalttaste gedrückt, um gespeicherte Curve-Optimiser- und Intel-Undervolting-Einstellungen für diese Sitzung zu überspringen.",
   "Automatic tuning skipped": "Automatisches Tuning übersprungen",
-  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "Gespeicherte Curve-Optimiser- und Intel-Undervolting-Einstellungen werden während dieser Sitzung nicht automatisch angewendet."
+  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "Gespeicherte Curve-Optimiser- und Intel-Undervolting-Einstellungen werden während dieser Sitzung nicht automatisch angewendet.",
+  "Preset on Workstation Lock": "Profil beim Sperren der Arbeitsstation",
+  "Apply a preset when Windows locks the current session.": "Beim Sperren der aktuellen Windows-Sitzung ein Profil anwenden.",
+  "Preset on Workstation Unlock": "Profil beim Entsperren der Arbeitsstation",
+  "Apply a preset when the current Windows session is unlocked.": "Beim Entsperren der aktuellen Windows-Sitzung ein Profil anwenden.",
+  "Lock Preset Applied!": "Sperrprofil angewendet!",
+  "Unlock Preset Applied!": "Entsperrprofil angewendet!",
+  "Your workstation lock preset has been applied.": "Das Profil für die gesperrte Arbeitsstation wurde angewendet.",
+  "Your workstation unlock preset has been applied.": "Das Profil für die entsperrte Arbeitsstation wurde angewendet."
 }
