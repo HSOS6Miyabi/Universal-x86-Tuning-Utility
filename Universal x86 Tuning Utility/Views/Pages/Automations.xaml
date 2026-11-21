@@ -31,7 +31,9 @@
         </Style>
     </Page.Resources>
 
-    <StackPanel Margin="18,10,18,18">
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="18,10,18,18">
         <TextBlock FontSize="26"
                    FontWeight="Medium"
                    Text="Automations" />
@@ -145,6 +147,72 @@
             </ui:CardControl.Header>
         </ui:CardControl>
 
+        <ui:CardControl Margin="0,8,0,0" Icon="{ui:SymbolIcon LockClosed20}">
+            <ui:CardControl.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="0,0,18,0" VerticalAlignment="Center">
+                        <TextBlock FontSize="14" FontWeight="Medium" Text="Preset on Workstation Lock" />
+                        <TextBlock FontSize="12"
+                                   Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                                   Text="Apply a preset when Windows locks the current session."
+                                   TextWrapping="Wrap" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                        <ComboBox x:Name="cbxLock"
+                                  MinWidth="150"
+                                  Height="37"
+                                  ItemsSource="{Binding Presets}"
+                                  SelectedItem="{Binding SelectedLockPreset, Mode=TwoWay}" />
+                        <ui:Button x:Name="btnLockLoad"
+                                   Width="44"
+                                   Height="37"
+                                   Margin="8,0,0,0"
+                                   ToolTip="Refresh the preset list"
+                                   Command="{Binding ReloadPresetsCommand}">
+                            <ui:SymbolIcon Symbol="ArrowSync20" FontSize="20" />
+                        </ui:Button>
+                    </StackPanel>
+                </Grid>
+            </ui:CardControl.Header>
+        </ui:CardControl>
+
+        <ui:CardControl Margin="0,8,0,0" Icon="{ui:SymbolIcon LockOpen20}">
+            <ui:CardControl.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="0,0,18,0" VerticalAlignment="Center">
+                        <TextBlock FontSize="14" FontWeight="Medium" Text="Preset on Workstation Unlock" />
+                        <TextBlock FontSize="12"
+                                   Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                                   Text="Apply a preset when the current Windows session is unlocked."
+                                   TextWrapping="Wrap" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                        <ComboBox x:Name="cbxUnlock"
+                                  MinWidth="150"
+                                  Height="37"
+                                  ItemsSource="{Binding Presets}"
+                                  SelectedItem="{Binding SelectedUnlockPreset, Mode=TwoWay}" />
+                        <ui:Button x:Name="btnUnlockLoad"
+                                   Width="44"
+                                   Height="37"
+                                   Margin="8,0,0,0"
+                                   ToolTip="Refresh the preset list"
+                                   Command="{Binding ReloadPresetsCommand}">
+                            <ui:SymbolIcon Symbol="ArrowSync20" FontSize="20" />
+                        </ui:Button>
+                    </StackPanel>
+                </Grid>
+            </ui:CardControl.Header>
+        </ui:CardControl>
+
         <ui:CardControl x:Name="ccAutoOcCpuUv"
                         Margin="0,8,0,0"
                         Icon="{ui:SymbolIcon TopSpeed20}">
@@ -193,4 +261,5 @@
             </ui:CardControl.Header>
         </ui:CardControl>
     </StackPanel>
+    </ScrollViewer>
 </Page>
