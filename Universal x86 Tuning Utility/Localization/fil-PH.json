@@ -620,5 +620,13 @@
   "Start-up tuning delayed": "Naantala ang pag-tune sa pagsisimula",
   "Hold Shift within 10 seconds to skip saved Curve Optimiser and Intel undervolt settings for this session.": "Pindutin nang matagal ang Shift sa loob ng 10 segundo upang laktawan sa sesyong ito ang naka-save na Curve Optimiser at Intel undervolt na mga setting.",
   "Automatic tuning skipped": "Nilaktawan ang awtomatikong pag-tune",
-  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "Hindi awtomatikong ilalapat sa sesyong ito ang naka-save na Curve Optimiser at Intel undervolt na mga setting."
+  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "Hindi awtomatikong ilalapat sa sesyong ito ang naka-save na Curve Optimiser at Intel undervolt na mga setting.",
+  "Preset on Workstation Lock": "Preset kapag naka-lock ang workstation",
+  "Apply a preset when Windows locks the current session.": "Ilapat ang preset kapag ni-lock ng Windows ang kasalukuyang session.",
+  "Preset on Workstation Unlock": "Preset kapag na-unlock ang workstation",
+  "Apply a preset when the current Windows session is unlocked.": "Ilapat ang preset kapag na-unlock ang kasalukuyang Windows session.",
+  "Lock Preset Applied!": "Nailapat ang preset sa pag-lock!",
+  "Unlock Preset Applied!": "Nailapat ang preset sa pag-unlock!",
+  "Your workstation lock preset has been applied.": "Nailapat ang preset para sa pag-lock ng workstation.",
+  "Your workstation unlock preset has been applied.": "Nailapat ang preset para sa pag-unlock ng workstation."
 }
