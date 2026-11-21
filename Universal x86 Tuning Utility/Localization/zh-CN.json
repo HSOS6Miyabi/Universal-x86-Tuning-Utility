@@ -620,5 +620,13 @@
   "Start-up tuning delayed": "启动调校已延迟",
   "Hold Shift within 10 seconds to skip saved Curve Optimiser and Intel undervolt settings for this session.": "请在 10 秒内按住 Shift，以在本次会话中跳过已保存的曲线优化器和 Intel 降压设置。",
   "Automatic tuning skipped": "已跳过自动调校",
-  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "本次会话期间不会自动应用已保存的曲线优化器和 Intel 降压设置。"
+  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "本次会话期间不会自动应用已保存的曲线优化器和 Intel 降压设置。",
+  "Preset on Workstation Lock": "工作站锁定后的预设",
+  "Apply a preset when Windows locks the current session.": "Windows 锁定当前会话时自动应用预设。",
+  "Preset on Workstation Unlock": "工作站解锁后的预设",
+  "Apply a preset when the current Windows session is unlocked.": "当前 Windows 会话解锁时自动应用预设。",
+  "Lock Preset Applied!": "已应用工作站锁定预设！",
+  "Unlock Preset Applied!": "已应用工作站解锁预设！",
+  "Your workstation lock preset has been applied.": "已应用工作站锁定后的预设。",
+  "Your workstation unlock preset has been applied.": "已应用工作站解锁后的预设。"
 }
