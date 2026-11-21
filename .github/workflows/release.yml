@@ -91,17 +91,26 @@ jobs:
             }
           }
 
+      - name: Resolve release version
+        id: version
+        shell: pwsh
+        run: |
+          [xml]$project = Get-Content 'Universal x86 Tuning Utility/Universal x86 Tuning Utility.csproj' -Raw
+          $version = ($project.Project.PropertyGroup | Where-Object { $_.Version } | Select-Object -First 1).Version
+          if ($version -notmatch '^\d+\.\d+\.\d+$') { throw "Invalid application version: $version" }
+          "version=$version" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+
       - name: Create portable archive
         shell: pwsh
         run: |
           $output = Join-Path $env:RUNNER_TEMP 'UXTU-publish'
-          Compress-Archive -Path "$output/*" -DestinationPath 'Universal.x86.Tuning.Utility.26.3.2.Portable.zip' -Force
+          Compress-Archive -Path "$output/*" -DestinationPath 'Universal.x86.Tuning.Utility.${{ steps.version.outputs.version }}.Portable.zip' -Force
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: UXTU-26.3.2-windows-x64
-          path: Universal.x86.Tuning.Utility.26.3.2.Portable.zip
+          name: UXTU-${{ steps.version.outputs.version }}-windows-x64
+          path: Universal.x86.Tuning.Utility.${{ steps.version.outputs.version }}.Portable.zip
           if-no-files-found: error
 
       - name: Publish GitHub Release
@@ -109,16 +118,16 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          $tag = '26.3.2'
+          $tag = '${{ steps.version.outputs.version }}'
           gh release view $tag --repo '${{ github.repository }}' *> $null
           if ($LASTEXITCODE -eq 0) {
             Write-Host "Release $tag already exists."
             exit 0
           }
-          gh release create $tag 'Universal.x86.Tuning.Utility.26.3.2.Portable.zip' --repo '${{ github.repository }}' --target '${{ github.sha }}' --title 'Universal x86 Tuning Utility 26.3.2' --notes @'
+          gh release create $tag 'Universal.x86.Tuning.Utility.${{ steps.version.outputs.version }}.Portable.zip' --repo '${{ github.repository }}' --target '${{ github.sha }}' --title 'Universal x86 Tuning Utility ${{ steps.version.outputs.version }}' --notes @'
           Added presets for Windows workstation lock and unlock events in Automations.
           Session events use SystemEvents.SessionSwitch and apply the selected preset while UXTU is running.
-          Includes Chinese localization and a scrollable automation settings page.
+          Includes translations for all 21 supported languages and a scrollable automation settings page.
 
           Download the Windows x64 portable ZIP. Requires .NET Desktop Runtime 10 (x64) and PawnIO for supported hardware features.
           '@
