@@ -55,5 +55,13 @@
   "Start-up tuning delayed": "Start-up tuning delayed",
   "Hold Shift within 10 seconds to skip saved Curve Optimiser and Intel undervolt settings for this session.": "Hold Shift within 10 seconds to skip saved Curve Optimiser and Intel undervolt settings for this session.",
   "Automatic tuning skipped": "Automatic tuning skipped",
-  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session."
+  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.",
+  "Preset on Workstation Lock": "Preset on Workstation Lock",
+  "Apply a preset when Windows locks the current session.": "Apply a preset when Windows locks the current session.",
+  "Preset on Workstation Unlock": "Preset on Workstation Unlock",
+  "Apply a preset when the current Windows session is unlocked.": "Apply a preset when the current Windows session is unlocked.",
+  "Lock Preset Applied!": "Lock Preset Applied!",
+  "Unlock Preset Applied!": "Unlock Preset Applied!",
+  "Your workstation lock preset has been applied.": "Your workstation lock preset has been applied.",
+  "Your workstation unlock preset has been applied.": "Your workstation unlock preset has been applied."
 }
