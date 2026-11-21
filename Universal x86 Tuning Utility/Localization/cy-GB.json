@@ -620,5 +620,13 @@
   "Start-up tuning delayed": "Oedi tiwnio wrth gychwyn",
   "Hold Shift within 10 seconds to skip saved Curve Optimiser and Intel undervolt settings for this session.": "Daliwch Shift o fewn 10 eiliad i hepgor gosodiadau Curve Optimiser a thanfoltio Intel sydd wedi'u cadw ar gyfer y sesiwn hon.",
   "Automatic tuning skipped": "Hepgorwyd tiwnio awtomatig",
-  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "Ni fydd gosodiadau Curve Optimiser a thanfoltio Intel sydd wedi'u cadw yn cael eu cymhwyso'n awtomatig yn ystod y sesiwn hon."
+  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "Ni fydd gosodiadau Curve Optimiser a thanfoltio Intel sydd wedi'u cadw yn cael eu cymhwyso'n awtomatig yn ystod y sesiwn hon.",
+  "Preset on Workstation Lock": "Rhagosodiad wrth Gloi'r Weithfan",
+  "Apply a preset when Windows locks the current session.": "Cymhwyso rhagosodiad pan fydd Windows yn cloi'r sesiwn gyfredol.",
+  "Preset on Workstation Unlock": "Rhagosodiad wrth Ddatgloi'r Weithfan",
+  "Apply a preset when the current Windows session is unlocked.": "Cymhwyso rhagosodiad pan gaiff sesiwn gyfredol Windows ei datgloi.",
+  "Lock Preset Applied!": "Rhagosodiad Cloi wedi'i Gymhwyso!",
+  "Unlock Preset Applied!": "Rhagosodiad Datgloi wedi'i Gymhwyso!",
+  "Your workstation lock preset has been applied.": "Mae rhagosodiad cloi'r weithfan wedi'i gymhwyso.",
+  "Your workstation unlock preset has been applied.": "Mae rhagosodiad datgloi'r weithfan wedi'i gymhwyso."
 }
