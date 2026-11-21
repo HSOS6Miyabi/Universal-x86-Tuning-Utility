@@ -620,5 +620,13 @@
   "Start-up tuning delayed": "เลื่อนการปรับแต่งเมื่อเริ่มต้น",
   "Hold Shift within 10 seconds to skip saved Curve Optimiser and Intel undervolt settings for this session.": "กด Shift ค้างไว้ภายใน 10 วินาทีเพื่อข้ามการตั้งค่า Curve Optimiser และการลดแรงดันไฟ Intel ที่บันทึกไว้สำหรับเซสชันนี้",
   "Automatic tuning skipped": "ข้ามการปรับแต่งอัตโนมัติแล้ว",
-  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "การตั้งค่า Curve Optimiser และการลดแรงดันไฟ Intel ที่บันทึกไว้จะไม่ถูกใช้โดยอัตโนมัติระหว่างเซสชันนี้"
+  "Saved Curve Optimiser and Intel undervolt settings will not be applied automatically during this session.": "การตั้งค่า Curve Optimiser และการลดแรงดันไฟ Intel ที่บันทึกไว้จะไม่ถูกใช้โดยอัตโนมัติระหว่างเซสชันนี้",
+  "Preset on Workstation Lock": "ค่าที่ตั้งไว้ล่วงหน้าเมื่อล็อกเวิร์กสเตชัน",
+  "Apply a preset when Windows locks the current session.": "ใช้ค่าที่ตั้งไว้ล่วงหน้าเมื่อ Windows ล็อกเซสชันปัจจุบัน",
+  "Preset on Workstation Unlock": "ค่าที่ตั้งไว้ล่วงหน้าเมื่อปลดล็อกเวิร์กสเตชัน",
+  "Apply a preset when the current Windows session is unlocked.": "ใช้ค่าที่ตั้งไว้ล่วงหน้าเมื่อปลดล็อกเซสชัน Windows ปัจจุบัน",
+  "Lock Preset Applied!": "ใช้ค่าที่ตั้งไว้ล่วงหน้าสำหรับการล็อกแล้ว!",
+  "Unlock Preset Applied!": "ใช้ค่าที่ตั้งไว้ล่วงหน้าสำหรับการปลดล็อกแล้ว!",
+  "Your workstation lock preset has been applied.": "ใช้ค่าที่ตั้งไว้ล่วงหน้าสำหรับการล็อกเวิร์กสเตชันแล้ว",
+  "Your workstation unlock preset has been applied.": "ใช้ค่าที่ตั้งไว้ล่วงหน้าสำหรับการปลดล็อกเวิร์กสเตชันแล้ว"
 }
